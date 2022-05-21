@@ -1,0 +1,5 @@
+default:
+  path-dir-data-clean: "data/clean"
+  path-dir-data-twitter: "data/from-twitter"
+  path-dir-data-raw: "data/raw"
+ 
