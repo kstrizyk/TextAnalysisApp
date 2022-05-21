@@ -3,5 +3,5 @@
 .Rproj.user
 .Renviron
 
-# Ignore renv directory
-renv/*
+# Ignore private library
+renv/library
