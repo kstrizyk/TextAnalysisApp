@@ -1,0 +1,3 @@
+# Ignore Rproject files
+.Rhistory
+.Rproj.user
