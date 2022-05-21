@@ -1,3 +1,7 @@
-# Ignore Rproject files
+# Ignore unnecessary Rproject files
 .Rhistory
 .Rproj.user
+.Renviron
+
+# Ignore renv directory
+renv/*
