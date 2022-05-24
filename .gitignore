@@ -3,5 +3,13 @@
 .Rproj.user
 .Renviron
 
-# Ignore renv directory
-renv/*
+# Ignore private library
+renv/library
+
+# Ignore some scripts
+src/twitter/create_log_dfs.R
+src/twitter/sandbox.R
+
+# 
+data/from-twitter/*
+!data/from-twitter/tweets.zip
