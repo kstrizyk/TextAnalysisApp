@@ -5,3 +5,8 @@
 
 # Ignore private library
 renv/library
+
+# Ignore some scripts
+src/twitter/create_log_dfs.R
+src/twitter/sandbox.R
+

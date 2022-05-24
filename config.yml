@@ -1,5 +1,22 @@
 default:
-  path-dir-data-clean: "data/clean"
-  path-dir-data-twitter: "data/from-twitter"
-  path-dir-data-raw: "data/raw"
- 
+  path-dir:
+    data-clean: data/clean
+    data-twitter: data/from-twitter
+    data-raw: data/raw
+    data-auxiliary: data/auxiliary
+  path-file:
+    users-choice: data/auxiliary/users_choice.csv
+    users: data/raw/users.csv
+
+  twitter-params:
+    user-fields:
+      - description
+      - public_metrics
+      - verified
+      - withheld
+    tweet-fields:
+      - author_id
+      - created_at
+      - public_metrics
+      - withheld
+  
