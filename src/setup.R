@@ -9,5 +9,8 @@ if (!require("renv")) {
 # initialize - used only for creating project setup
 # renv::init()
 
+# activate environment
+renv::activate()
+
 # get dependencies required by the project
 renv::restore()
