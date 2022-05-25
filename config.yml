@@ -1,7 +1,7 @@
 default:
   path-dir:
     data-clean: data/clean
-    data-twitter: data/from-twitter
+    data-twitter: data/from-twitter/
     data-raw: data/raw
     data-auxiliary: data/auxiliary
   path-file:
