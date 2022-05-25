@@ -2,6 +2,7 @@ path = config::get('path-dir')[['data-twitter']]
 
 library(data.table)
 library(jsonlite)
+library(dplyr) #IS IT IN SETUP??
 
 #  HOW TO READ DATA1 TO DATATABLE?
 
