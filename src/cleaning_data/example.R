@@ -18,7 +18,7 @@ JSON_to_table<- function(files, i){
 dt_long = data.table()
 
 for (i in 1:length(files)){
- name = paste0("table", i)
+ name = paste0("table", i) # czy potrzebujemy pojedynczych data.table dla kazdego pliku?
  assign(name, JSON_to_table(files, i))
  dt_long = bind_rows(dt_long, JSON_to_table(files, i))
 }
