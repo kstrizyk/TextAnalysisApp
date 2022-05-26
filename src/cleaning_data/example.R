@@ -75,4 +75,6 @@ tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
    
  }
 
-a = lapply(users, findCrucialTweets)
+for (i in users){
+  findCrucialTweets(i)
+}
