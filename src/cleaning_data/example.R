@@ -4,6 +4,7 @@ path = config::get('path-dir')[['data-twitter']]
 # ACTIVATE NEEDED LIBRARIES
 library(data.table)
 library(jsonlite)
+library(readr) #USED FOR READ_CSV BECAUSE OF PROBLEMS WITH READ.CSV
 
 
 # 1. HOW TO READ DATA1 TO DATATABLE?
@@ -46,28 +47,32 @@ write.csv(tableOfAllTweets, paste(path1, "/tweets.csv", sep=""), row.names = FAL
 
 # READING USERS.CSV AS DATA.TABLE
 # AND CHANGING COLUMN NAMES
-tableOfAllUsers = as.data.table(read.csv(paste(path1, "/users.csv", sep="")))
-colNamesNewUsers =  c("name", "fullName", 
-                 "description", "userId", "verification", 
+tableOfAllUsers = as.data.table(read_csv(paste(path1, "/users.csv", sep="")))
+colNamesNewUsers =  c("name", "fullName",
+                 "description", "userId", "verification",
                  "followersCount", "followingCount", "tweetCount",
                  "listedCount", "lastUpdate")
 setnames(tableOfAllUsers, colNamesNewUsers)
 
 # FIRST AND LAST TWEET AND DATES OF THESE TWEETS - NEW COLUMNS
-
 #NUMBER OF USER IN TWEETS.CSV AND USERS.CSV IS NOT EQUAL
-users = unique(tableOfAllTweets$userId) 
-users1 = unique(tableOfAllUsers$userId) #MORE USERS THAN IN TWEETS, BY 7
+users = tableOfAllUsers$userId
 
-findCrucialTweets <- function(table,id){
-  tableForUser = table[userId == id]
-  tableForUser = tableForUser[order(as.Date(tableForUser$creationDate, 
-                                            format = "%Y/%m/%d")),]
-  firstTweetDate = tableForUser$creationDate[1]
-  lastTweetDate = tail(tableForUser$creationDate, n=1)
-  firstTweetId = tableForUser$tweetId[1]
-  lastTweetId = tail(tableForUser$tweetId, n= 1)
-}
+tableOfAllUsers[, c("firstTweetId", "firstTweetDate", "lastTweetId", "lastTweetDate")]<- NA
+tableOfAllUsers[, firstTweetId:=as.character(firstTweetId)]
+tableOfAllUsers[, firstTweetDate:=as.character(firstTweetDate)]
+tableOfAllUsers[, lastTweetId:=as.character(lastTweetId)]
+tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
 
-#tableOfAllUsers[, `:=` ("firstTweet"=0, "firstTweetDate"=0, "lastTweet"=0, "lastTweetDate"=0)]
+ findCrucialTweets <- function(id){
+   tableForUser = tableOfAllTweets[userId == id]
+   tableForUser = tableForUser[order(as.Date(tableForUser$creationDate,
+                                             format = "%Y/%m/%d")),]
+   tableOfAllUsers[userId == id]$firstTweetDate = tableForUser$creationDate[1]
+   #tableOfAllUsers[userId == id]$lastTweetDate = tail(tableForUser$creationDate, n=1)
+   #tableOfAllUsers[userId == id]$firstTweetId = tableForUser$tweetId[1]
+   #tableOfAllUsers[userId == id]$lastTweetId = tail(tableForUser$tweetId, n= 1)
+   
+ }
 
+a = lapply(users, findCrucialTweets)
