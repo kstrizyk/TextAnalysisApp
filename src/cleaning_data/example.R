@@ -69,12 +69,11 @@ tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
    tableForUser = tableForUser[order(as.Date(tableForUser$creationDate,
                                              format = "%Y/%m/%d")),]
    tableOfAllUsers[userId == id]$firstTweetDate = tableForUser$creationDate[1]
-   #tableOfAllUsers[userId == id]$lastTweetDate = tail(tableForUser$creationDate, n=1)
-   #tableOfAllUsers[userId == id]$firstTweetId = tableForUser$tweetId[1]
-   #tableOfAllUsers[userId == id]$lastTweetId = tail(tableForUser$tweetId, n= 1)
+   tableOfAllUsers[userId == id]$lastTweetDate = tail(tableForUser$creationDate, n=1)
+   tableOfAllUsers[userId == id]$firstTweetId = tableForUser$tweetId[1]
+   tableOfAllUsers[userId == id]$lastTweetId = tail(tableForUser$tweetId, n= 1)
    
  }
 
-for (i in users){
-  findCrucialTweets(i)
-}
+#use function to tableOfUsers and then re-write users.csv
+#change users.csv and tweet.csv location to data clean?
