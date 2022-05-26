@@ -37,7 +37,7 @@ setnames(tableOfAllTweets, colNamesNew)
 # 2. CREATE CSV FILE FOR ALL TWEETS
 
 path1 = config::get('path-dir')[['data-raw']]
-write.csv(tableOfAllTweets, paste(path1, "tweets.csv"), row.names = FALSE)
+write.csv(tableOfAllTweets, paste(path1, "/tweets.csv", sep=""), row.names = FALSE)
 
 # 3. UPDATE USERS.CSV, 
 #    ADDING FIRST AND LAST TWEET ID AND DATE FOR EACH USER,
