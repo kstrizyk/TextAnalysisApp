@@ -1,5 +1,6 @@
 # GET PATH TO JSON FILES
 path = config::get('path-dir')[['data-twitter']]
+options(scipen=999, encoding="UTF-8")
 
 # ACTIVATE NEEDED LIBRARIES
 library(data.table)
@@ -56,7 +57,7 @@ setnames(tableOfAllUsers, colNamesNewUsers)
 
 # FIRST AND LAST TWEET AND DATES OF THESE TWEETS - NEW COLUMNS
 #NUMBER OF USER IN TWEETS.CSV AND USERS.CSV IS NOT EQUAL
-users = tableOfAllUsers$userId
+users = unique(tableOfAllUsers$userId)
 
 tableOfAllUsers[, c("firstTweetId", "firstTweetDate", "lastTweetId", "lastTweetDate")]<- NA
 tableOfAllUsers[, firstTweetId:=as.character(firstTweetId)]
@@ -64,16 +65,28 @@ tableOfAllUsers[, firstTweetDate:=as.character(firstTweetDate)]
 tableOfAllUsers[, lastTweetId:=as.character(lastTweetId)]
 tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
 
+
+
  findCrucialTweets <- function(id){
    tableForUser = tableOfAllTweets[userId == id]
    tableForUser = tableForUser[order(as.Date(tableForUser$creationDate,
                                              format = "%Y/%m/%d")),]
-   tableOfAllUsers[userId == id]$firstTweetDate = tableForUser$creationDate[1]
-   tableOfAllUsers[userId == id]$lastTweetDate = tail(tableForUser$creationDate, n=1)
-   tableOfAllUsers[userId == id]$firstTweetId = tableForUser$tweetId[1]
-   tableOfAllUsers[userId == id]$lastTweetId = tail(tableForUser$tweetId, n= 1)
+   firstTweetDate = tableForUser$creationDate[1]
+   lastTweetDate = tail(tableForUser$creationDate, n=1)
+   firstTweetId  = tableForUser$tweetId[1]
+   lastTweetId = tail(tableForUser$tweetId, n= 1)
+   
+   tableOfAllUsers[userId == id]$firstTweetDate = firstTweetDate
+   tableOfAllUsers[userId == id]$lastTweetDate = lastTweetDate
+   tableOfAllUsers[userId == id]$firstTweetId = firstTweetId
+   tableOfAllUsers[userId == id]$lastTweetId = lastTweetId
+   return(tableOfAllUsers)
    
  }
+ 
 
+
+ 
+listOfAllUSers = lapply(users, findCrucialTweets)
 #use function to tableOfUsers and then re-write users.csv
 #change users.csv and tweet.csv location to data clean?

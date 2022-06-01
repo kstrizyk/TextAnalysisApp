@@ -13,7 +13,7 @@ default:
       - description
       - public_metrics
       - verified
-      - withheld
+      - withheldRR
     tweet-fields:
       - author_id
       - created_at
