@@ -67,7 +67,7 @@ tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
 
 
 
- findCrucialTweets <- function(id){
+ for(i in users){
    tableForUser = tableOfAllTweets[userId == id]
    tableForUser = tableForUser[order(as.Date(tableForUser$creationDate,
                                              format = "%Y/%m/%d")),]
@@ -84,9 +84,8 @@ tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
    
  }
  
-
+ path1 = config::get('path-dir')[['data-raw']]
+ write.csv(tableOfAllUsers, paste(path1, "/users_clean1.csv", sep=""), row.names = FALSE)
 
  
-listOfAllUSers = lapply(users, findCrucialTweets)
-#use function to tableOfUsers and then re-write users.csv
-#change users.csv and tweet.csv location to data clean?
+
