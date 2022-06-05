@@ -1,4 +1,4 @@
-"name","fullName","description","userId","verification","followersCount","followingCount","tweetCount","listedCount","lastUpdate","firstTweetId","firstTweetDate","lastTweetId","lastTweetDate"
+"name","fullName","description","userId","verification","followersCount","followingCount","tweetCount","listedCount","lastUpdate","lastTweetId","lastTweetDate","firstTweetId","firstTweetDate"
 "BorisJohnson","Boris Johnson","Prime Minister of the United Kingdom and @Conservatives leader. Member of Parliament for Uxbridge and South Ruislip.",3131144855,TRUE,4443436,459,5767,10345,2022-05-22 11:40:49,"1520492999624609792","2022-04-30T19:59:15.000Z","1477202507470454787","2022-01-01T08:58:17.000Z"
 "10DowningStreet","UK Prime Minister","Official page for Prime Minister @BorisJohnson's office, based at 10 Downing Street",14224719,TRUE,5908953,303,17935,22466,2022-05-22 11:40:49,"1520493967758012417","2022-04-30T20:03:05.000Z","1477586129549410306","2022-01-02T10:22:40.000Z"
 "POTUS","President Biden","46th President of the United States, husband to @FLOTUS, proud dad & pop. Tweets may be archived: https://t.co/HDhBZBkKpU",1349149096909668352,TRUE,22432127,12,3222,18064,2022-05-22 11:40:49,"1520478183447011328","2022-04-30T19:00:22.000Z","1477142568693637121","2022-01-01T05:00:07.000Z"
@@ -7,7 +7,8 @@
 "SecBlinken","Secretary Antony Blinken","Husband, dad, (very) amateur guitarist, and the 71st Secretary of State serving under the leadership of @POTUS Biden.",1350150750966603776,TRUE,1450013,38,2773,4826,2022-05-22 11:40:49,"1520549397284720640","2022-04-30T23:43:21.000Z","1477267088486109188","2022-01-01T13:14:54.000Z"
 "WhiteHouse","The White House","Welcome to the Biden-Harris White House! Tweets may be archived: https://t.co/UbZQo0sWVf",1323730225067339776,TRUE,7080803,5,3574,10728,2022-05-22 11:40:49,"1520481951769153540","2022-04-30T19:15:21.000Z","1477114665398423557","2022-01-01T03:09:14.000Z"
 "jensstoltenberg","Jens Stoltenberg",NA,20796069,TRUE,716834,33367,3907,4384,2022-05-22 11:40:49,"1519661070008344577","2022-04-28T12:53:27.000Z","1478423775888740352","2022-01-04T17:51:10.000Z"
-"NATO","NATO","Working for peace, security and freedom for one billion people. Official Twitter account of the North Atlantic Treaty Organization. 
+"NATO","NATO","Working for peace, security and freedom for one billion people. Official Twitter account of the North Atlantic Treaty Organization. 
+
 #NATO #WeAreNATO",83795099,TRUE,1457917,929,14811,8947,2022-05-22 11:40:49,"1520488159225827334","2022-04-30T19:40:01.000Z","1492037405934866433","2022-02-11T07:26:52.000Z"
 "vonderleyen","Ursula von der Leyen","President of the @EU_Commission. Mother of seven. Brussels-born. European by heart. <U+0001F1EA><U+0001F1FA>",1146329871418843136,TRUE,1190633,210,3284,5727,2022-05-22 11:40:49,"1520333095945347072","2022-04-30T09:23:51.000Z","1477202943371743233","2022-01-01T09:00:01.000Z"
 "JosepBorrellF","Josep Borrell Fontelles","High Representative of the EU for Foreign Affairs and Security Policy/Vice-President of @eu_commission #EUdiplomacy @eu_eeas My blog: https://t.co/isaaoLI4bK",1003895325025865728,TRUE,330434,211,5690,2692,2022-05-22 11:40:49,"1520489431781756928","2022-04-30T19:45:04.000Z","1478329661461614592","2022-01-04T11:37:11.000Z"
@@ -24,7 +25,8 @@
 "Tsihanouskaya","Sviatlana Tsikhanouskaya","The national leader of Belarus / Telegram https://t.co/lL3cUFIMz0",1312028370088144896,TRUE,173901,814,4870,1111,2022-05-22 11:40:49,"1520304013098598400","2022-04-30T07:28:17.000Z","1477654482410516485","2022-01-02T14:54:16.000Z"
 "PolandMFA","Ministry of Foreign Affairs <U+0001F1F5><U+0001F1F1>","Ministry of Foreign Affairs of the Republic of Poland <U+0001F1F5><U+0001F1F1> Polska dyplomacja: @MSZ_RP",81055599,TRUE,67905,501,26154,1178,2022-05-22 11:40:49,"1520032561862516739","2022-04-29T13:29:38.000Z","1477188166557839361","2022-01-01T08:01:18.000Z"
 "zlj517","Lijian Zhao <U+8D75><U+7ACB><U+575A>","Spokesman & DDG, Information Department, Foreign Ministry, China. @MFA_China @SpokespersonCHN YouTube https://t.co/owWGn7HxYe Facebook https://t.co/Mkd9zCNrkU",141627220,TRUE,1392307,173391,69702,2948,2022-05-22 11:40:49,"1520053309284835331","2022-04-29T14:52:04.000Z","1496484033056116737","2022-02-23T13:56:11.000Z"
-"Canada","Canada #StandWithUkraine<U+0001F1FA><U+0001F1E6>","Showcasing Canada to the world - français: @AuCanada - https://t.co/hKNrf2Ameu
+"Canada","Canada #StandWithUkraine<U+0001F1FA><U+0001F1E6>","Showcasing Canada to the world - français: @AuCanada - https://t.co/hKNrf2Ameu
+
 #StandWithUkraine<U+0001F1FA><U+0001F1E6>",2459609448,TRUE,1082406,765,8386,2416,2022-05-22 11:40:49,"1520401408150978562","2022-04-30T13:55:18.000Z","1477278189818941440","2022-01-01T13:59:01.000Z"
 "GitanasNauseda","Gitanas Nauseda","President of the Republic of Lithuania",1067849967811944448,TRUE,94680,25,1179,547,2022-05-22 11:40:49,"1520112710343606272","2022-04-29T18:48:07.000Z","1477267751353950208","2022-01-01T13:17:32.000Z"
 "sandumaiamd","Maia Sandu","President of the Republic of Moldova",4823433298,TRUE,84660,77,305,438,2022-05-22 11:40:49,"1519693192710533121","2022-04-28T15:01:06.000Z","1480824638196396035","2022-01-11T08:51:20.000Z"
@@ -32,18 +34,23 @@
 "swedense","Sweden.se","Hej! This is Sweden's official Twitter account. Managed by the https://t.co/JDCLs7Jjwa team and a moose at @SweInstitute. Community standards: https://t.co/W34cfgsxFe.",20927633,TRUE,145381,1075,19637,980,2022-05-22 11:40:49,"1520294078759325698","2022-04-30T06:48:48.000Z","1478632201600348162","2022-01-05T07:39:23.000Z"
 "ScottMorrisonMP","Scott Morrison","Prime Minister of Australia and Federal Member for Cook. Authorised by S. Morrison, Liberal Party, Canberra.",34116377,TRUE,661021,1712,8246,2714,2022-05-22 11:40:49,"1519893481682259968","2022-04-29T04:16:58.000Z","1478848008363991049","2022-01-05T21:56:55.000Z"
 "NorwayMFA","Norway MFA","Norwegian Ministry of Foreign Affairs official Twitter profile in English. In Norwegian: @Utenriksdept. Our Ministers: @AHuitfeldt & @AnneBeathe_",966113328,TRUE,77207,1663,8157,953,2022-05-22 11:40:49,"1520441118567301120","2022-04-30T16:33:05.000Z","1477236573439680513","2022-01-01T11:13:39.000Z"
-"FinGovernment","Finnish Government","Latest from the Government and Ministries of Finland. By the Communications Department, Prime Minister’s Office. 
-
+"FinGovernment","Finnish Government","Latest from the Government and Ministries of Finland. By the Communications Department, Prime Minister’s Office. 
+
+
+
 https://t.co/NvmQ5ojuyh…",292291704,TRUE,40412,142,13210,475,2022-05-22 11:40:49,"1520343219762049024","2022-04-30T10:04:04.000Z","1477960679839744002","2022-01-03T11:10:59.000Z"
 "japan","japan","This account has been managed by the Government of Japan @JapanGov since March 10, 2015.",869231,TRUE,316591,98,9317,1798,2022-05-22 11:40:49,"1520281833644392449","2022-04-30T06:00:09.000Z","1477158971161333766","2022-01-01T06:05:17.000Z"
-"UN","United Nations","Official account of the United Nations. 
+"UN","United Nations","Official account of the United Nations. 
+
 For peace, dignity & equality on a healthy planet.",14159148,TRUE,15515410,1201,85113,44158,2022-05-22 11:40:49,"1520509043294363648","2022-04-30T21:03:00.000Z","1501558725441687557","2022-03-09T14:01:12.000Z"
 "BBC","BBC","Our mission is to enrich your life and to inform, educate and entertain you, wherever you are.",19701628,TRUE,2030128,271,36899,14080,2022-05-22 11:40:49,"1520391281108791296","2022-04-30T13:15:03.000Z","1477202946102333440","2022-01-01T09:00:02.000Z"
 "BBCNews","BBC News (UK)","News, features and analysis. For world news, follow @BBCWorld. Breaking news, follow @BBCBreaking. Latest sport news @BBCSport. Our Instagram: BBCNews",612473,TRUE,13952653,93,492781,48811,2022-05-22 11:40:49,"1520542864446525442","2022-04-30T23:17:23.000Z","1517134172288135169","2022-04-21T13:32:28.000Z"
 "BBCWorld","BBC News (World)","News, features and analysis from the World's newsroom. Breaking news, follow @BBCBreaking. UK news, @BBCNews. Latest sports news @BBCSport",742143,TRUE,36707270,18,346380,131366,2022-05-22 11:40:49,"1520551726100721667","2022-04-30T23:52:36.000Z","1513415967610658819","2022-04-11T07:17:39.000Z"
 "TelegraphNews","Telegraph Breaking News","The latest national and international news from the @Telegraph team.",14138785,TRUE,764556,246,211732,12151,2022-05-22 11:40:49,"1520400408178475008","2022-04-30T13:51:19.000Z","1478761207213481988","2022-01-05T16:12:00.000Z"
-"Telegraph","The Telegraph","Think ahead with the latest news, comment, analysis and video. 
-
+"Telegraph","The Telegraph","Think ahead with the latest news, comment, analysis and video. 
+
+
+
 Subscribe here: https://t.co/jRf9lAo5nY",16343974,TRUE,3239638,886,484162,20786,2022-05-22 11:40:49,NA,NA,NA,NA
 "guardian","The Guardian","The need for independent journalism has never been greater. Become a Guardian supporter: https://t.co/gWyuUVlObq",87818409,TRUE,10496348,1060,748823,69224,2022-05-22 11:40:49,NA,NA,NA,NA
 "guardiannews","Guardian news","The need for independent journalism has never been greater. Become a Guardian supporter: https://t.co/KXycIPGfHd",788524,TRUE,3767030,1227,310076,35112,2022-05-22 11:40:49,"1520550816721035265","2022-04-30T23:48:59.000Z","1518258300357431296","2022-04-24T15:59:21.000Z"
@@ -56,30 +63,44 @@ Subscribe here: https://t.co/jRf9lAo5nY",16343974,TRUE,3239638,886,484162,20786,
 "Newsweek","Newsweek","The freedom to disagree.",2884771,TRUE,3550784,567,306551,37407,2022-05-22 11:40:49,"1520544604302553094","2022-04-30T23:24:18.000Z","1516846597769945089","2022-04-20T18:29:45.000Z"
 "CNBC","CNBC","First in business worldwide.",20402945,TRUE,4688772,853,499163,38365,2022-05-22 11:40:49,NA,NA,NA,NA
 "ABC","ABC News","All the news and information you need to see, curated by the @ABC News team. Watch full ABC News broadcasts on @Hulu: https://t.co/w3wQ1O1Szs",28785486,TRUE,17503760,488,386022,65584,2022-05-22 11:40:49,"1520551640469843968","2022-04-30T23:52:16.000Z","1517123621403172867","2022-04-21T12:50:32.000Z"
-"KyivIndependent","The Kyiv Independent","Independent English-language journalism in Ukraine.
-
-Become our patron: https://t.co/4OIXdyilwG
-
+"KyivIndependent","The Kyiv Independent","Independent English-language journalism in Ukraine.
+
+
+
+Become our patron: https://t.co/4OIXdyilwG
+
+
+
 Donate: https://t.co/SoNr2TVrxO",1462548977367359488,TRUE,2148331,20,5240,15927,2022-05-22 11:40:49,"1520541929586544653","2022-04-30T23:13:40.000Z","1515001905147166724","2022-04-15T16:19:36.000Z"
 "KyivPost","KyivPost","The award-winning Kyiv Post is the top international source of English-language news about Ukraine since 1995.",14106476,TRUE,375584,1579,57754,5897,2022-05-22 11:40:49,"1520427039341350912","2022-04-30T15:37:09.000Z","1507666499711897605","2022-03-26T10:31:19.000Z"
-"MoscowTimes","The Moscow Times","Independent news from Russia since 1992. 
-
+"MoscowTimes","The Moscow Times","Independent news from Russia since 1992. 
+
+
+
 Photo: Alexander Avilov / Moskva News Agency",19527964,TRUE,186418,364,115744,5518,2022-05-22 11:40:49,"1520541758601371648","2022-04-30T23:13:00.000Z","1505269876440674306","2022-03-19T19:47:59.000Z"
 "dwnews","DW News","We really know Germany <U+0001F1E9><U+0001F1EA>. Follow us for trustworthy news and analysis from our reporters around the world. We also have a sense of humor. Sometimes.",6134882,TRUE,602343,604,308593,8215,2022-05-22 11:40:49,"1520549811656675328","2022-04-30T23:45:00.000Z","1513687091422666763","2022-04-12T01:15:00.000Z"
-"en_germany","All about Germany | deutschland.de","Stay up to date on what's happening in <U+0001F1E9><U+0001F1EA> and our global outreach to all regions of the <U+0001F30D>.
-Recommendations: @ger_trends & @ger_service
+"en_germany","All about Germany | deutschland.de","Stay up to date on what's happening in <U+0001F1E9><U+0001F1EA> and our global outreach to all regions of the <U+0001F30D>.
+
+Recommendations: @ger_trends & @ger_service
+
 <U+0001F4A1><U+0001F517> https://t.co/JTO1dmJvH5",21082756,TRUE,339087,2690,26169,668,2022-05-22 11:40:49,"1520391889345785857","2022-04-30T13:17:28.000Z","1494204974334627846","2022-02-17T07:00:01.000Z"
 "BILD_English","BILD_English","News from Germany and the world",16040059,FALSE,6426,0,74,297,2022-05-22 11:40:49,NA,NA,NA,NA
 "France24_en","FRANCE 24 English","<U+0001F30D> The French international news channel live 24/7 from Paris - Follow us for top stories on #business, #politics and #sports - <U+0001F534> Breaking Alerts: @BreakingF24",25049056,TRUE,337428,1123,324576,6255,2022-05-22 11:40:49,"1520502265370476547","2022-04-30T20:36:04.000Z","1516858898795401216","2022-04-20T19:18:38.000Z"
-"FRANCE24","FRANCE 24","<U+0001F30D> International News 24/7 in 4 languages: 
-@France24_fr - @France24_en - @France24_es - @France24_ar 
+"FRANCE24","FRANCE 24","<U+0001F30D> International News 24/7 in 4 languages: 
+
+@France24_fr - @France24_en - @France24_es - @France24_ar 
+
 <U+0001F4F1> https://t.co/xDU6EWz22o  <U+2709><U+FE0F> https://t.co/ZaaXsh7FeN",1994321,TRUE,3910357,455,368757,12286,2022-05-22 11:40:49,"1520438351135866887","2022-04-30T16:22:05.000Z","1514958260616445955","2022-04-15T13:26:10.000Z"
-"TVPWorld_com","TVP World","World news as seen from the Polish perspective and the latest news from the CEE region <U+0001F1F5><U+0001F1F1>
-
+"TVPWorld_com","TVP World","World news as seen from the Polish perspective and the latest news from the CEE region <U+0001F1F5><U+0001F1F1>
+
+
+
 Check It out! #TVPWorld_com",970631672268980224,FALSE,13116,693,18607,114,2022-05-22 11:40:49,"1520551579656634368","2022-04-30T23:52:01.000Z","1505837194702905347","2022-03-21T09:22:18.000Z"
 "notesfrompoland","Notes from Poland <U+0001F1F5><U+0001F1F1>","Independent and informed news and insight on Polish current affairs, politics, culture, business and history.",919246321898401792,FALSE,34511,202,21104,475,2022-05-22 11:40:49,"1520051539091628032","2022-04-29T14:45:02.000Z","1486784720016920584","2022-01-27T19:34:35.000Z"
-"thewire_in","The Wire","India's foremost independent news-site, carrying critical opinion, investigations and reportage. 
-
+"thewire_in","The Wire","India's foremost independent news-site, carrying critical opinion, investigations and reportage. 
+
+
+
 Click here to support us: https://t.co/zqZwu8jH0P",3150940290,TRUE,1199816,391,131512,2707,2022-05-22 11:40:49,"1520425517174108160","2022-04-30T15:31:06.000Z","1514121270085967874","2022-04-13T06:00:16.000Z"
 "ndtvfeed","NDTV News feed","Latest stories from NDTV Newsroom",96900937,TRUE,475435,2,365811,1318,2022-05-22 11:40:49,"1520548569069015042","2022-04-30T23:40:03.000Z","1520327863794294785","2022-04-30T09:03:03.000Z"
 "CBCNews","CBC News","Latest news and analysis from CBC News. <U+0001F1E8><U+0001F1E6>",6433472,TRUE,3332999,1296,263240,15680,2022-05-22 11:40:49,"1520493299781582850","2022-04-30T20:00:26.000Z","1510995626535890950","2022-04-04T15:00:04.000Z"
