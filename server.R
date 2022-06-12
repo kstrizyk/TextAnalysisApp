@@ -3,5 +3,11 @@ library(shiny)
 
 
 server = function(input, output, session){
-  #server code
+  
+  
+  output$dateRangeText  <- renderText({
+    paste("input$dateRange is", 
+          paste(as.character(input$dateRange), collapse = " to ")
+    )
+  })
 }
