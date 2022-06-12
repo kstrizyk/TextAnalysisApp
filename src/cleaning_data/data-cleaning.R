@@ -39,7 +39,7 @@ tableOfAllTweets[, userId:=as.character(userId)] #CHANGE COLUMN TYPE TO BE THE S
 
 # 2. CREATE CSV FILE FOR ALL TWEETS
 
-path1 = config::get('path-dir')[['data-clean']]
+path1 = config::get('path-dir')[['data-raw']]
 write.csv(tableOfAllTweets, paste(path1, "/tweets.csv", sep=""), row.names = FALSE)
 
 # 3. UPDATE USERS.CSV, 
@@ -78,7 +78,7 @@ tableOfAllUsers =merge(tableOfAllUsers, summaryTweets, by = "userId")
 
 
 
-path1 = config::get('path-dir')[['data-clean']]
+path1 = config::get('path-dir')[['data-raw']]
 write.csv(tableOfAllUsers, paste(path1, "/users_clean.csv", sep=""), row.names = FALSE)
 
  
