@@ -1,6 +1,6 @@
 # GET PATH TO JSON FILES
 path = config::get('path-dir')[['data-twitter']]
-options(scipen=999, encoding="UTF-8")
+
 
 # ACTIVATE NEEDED LIBRARIES
 library(data.table)
@@ -30,62 +30,57 @@ tableOfAllTweets = rbindlist(listOfAll, use.names = TRUE)
 
 # CHANGE COLUMN NAMES IN DATA.TABLE OF ALL TWEETS 
 # FOR MORE INTUITIVE APPROACH
-colNamesNewTweets =  c("creationDate", "userId", 
+colNamesNewTweets =  c("date", "userId", 
                  "text", "tweetId", "retweetCount", 
                  "replyCount", "likeCount", "quoteCount")
 setnames(tableOfAllTweets, colNamesNewTweets)
-tableOfAllTweets[, userId:=as.double(userId)] #CHANGE COLUMN TYPE TO BE THE SAME AS IN USERS.CSV
+tableOfAllTweets[, userId:=as.character(userId)] #CHANGE COLUMN TYPE TO BE THE SAME AS IN USERS.CSV
 
 
 # 2. CREATE CSV FILE FOR ALL TWEETS
 
-path1 = config::get('path-dir')[['data-raw']]
+path1 = config::get('path-dir')[['data-clean']]
 write.csv(tableOfAllTweets, paste(path1, "/tweets.csv", sep=""), row.names = FALSE)
 
 # 3. UPDATE USERS.CSV, 
 #    ADDING FIRST AND LAST TWEET ID AND DATE FOR EACH USER,
 #    ALSO CHANGE COLUMN NAMES IN THIS FILE
 
+
 # READING USERS.CSV AS DATA.TABLE
 # AND CHANGING COLUMN NAMES
-tableOfAllUsers = as.data.table(read_csv(paste(path1, "/users.csv", sep="")))
+tableOfAllUsers = fread(paste(path1, "/users.csv", sep=""))
+
+tableOfAllUsers[, data.public_metrics.listed_count := NULL] 
+
 colNamesNewUsers =  c("name", "fullName",
                  "description", "userId", "verification",
-                 "followersCount", "followingCount", "tweetCount",
-                 "listedCount", "lastUpdate")
+                 "followersCount", "followingCount", "tweetCount", 
+                 "lastUpdate")
+
 setnames(tableOfAllUsers, colNamesNewUsers)
+
+tableOfAllUsers[, userId := as.character(userId)]
 
 # FIRST AND LAST TWEET AND DATES OF THESE TWEETS - NEW COLUMNS
 #NUMBER OF USER IN TWEETS.CSV AND USERS.CSV IS NOT EQUAL
-users = unique(tableOfAllUsers$userId)
 
-tableOfAllUsers[, c("firstTweetId", "firstTweetDate", "lastTweetId", "lastTweetDate")]<- NA
-tableOfAllUsers[, firstTweetId:=as.character(firstTweetId)]
-tableOfAllUsers[, firstTweetDate:=as.character(firstTweetDate)]
-tableOfAllUsers[, lastTweetId:=as.character(lastTweetId)]
-tableOfAllUsers[, lastTweetDate:=as.character(lastTweetDate)]
+summaryTweets = tableOfAllTweets[, .(lastTweetId = max(tweetId), 
+                                    firstTweetId = min(tweetId),
+                                    lastTweetDate = max(as.Date(date)),
+                                    firstTweetDate = min(as.Date(date))), by = userId]
 
 
 
- for(i in users){
-   tableForUser = tableOfAllTweets[userId == id]
-   tableForUser = tableForUser[order(as.Date(tableForUser$creationDate,
-                                             format = "%Y/%m/%d")),]
-   firstTweetDate = tableForUser$creationDate[1]
-   lastTweetDate = tail(tableForUser$creationDate, n=1)
-   firstTweetId  = tableForUser$tweetId[1]
-   lastTweetId = tail(tableForUser$tweetId, n= 1)
-   
-   tableOfAllUsers[userId == id]$firstTweetDate = firstTweetDate
-   tableOfAllUsers[userId == id]$lastTweetDate = lastTweetDate
-   tableOfAllUsers[userId == id]$firstTweetId = firstTweetId
-   tableOfAllUsers[userId == id]$lastTweetId = lastTweetId
-   return(tableOfAllUsers)
-   
- }
+
+
+tableOfAllUsers =merge(tableOfAllUsers, summaryTweets, by = "userId")
+
+
+
+path1 = config::get('path-dir')[['data-clean']]
+write.csv(tableOfAllUsers, paste(path1, "/users_clean.csv", sep=""), row.names = FALSE)
+
  
- path1 = config::get('path-dir')[['data-raw']]
- write.csv(tableOfAllUsers, paste(path1, "/users_clean1.csv", sep=""), row.names = FALSE)
-
  
 
