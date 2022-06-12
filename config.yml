@@ -7,6 +7,8 @@ default:
   path-file:
     users-choice: data/auxiliary/users_choice.csv
     users: data/raw/users.csv
+    users-clean: data/raw/users_clean.csv
+    tweets-dt: data/raw/tweets.csv
 
   twitter-params:
     user-fields:
