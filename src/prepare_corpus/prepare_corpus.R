@@ -12,32 +12,22 @@
 library(data.table)
 library(tm)
 
-# libraries <- c("readr", "dplyr", "plyr", "ggplot2", "RColorBrewer", "magrittr",
-#                "tidytext", "stringi", "tm", "wordcloud", "SentimentAnalysis")
-# 
-# for( i in libraries  ){
-#   if( ! require( i , character.only = TRUE ) ){
-#     install.packages( i , dependencies = TRUE )
-#     require( i , character.only = TRUE )
-#   }
-# }
 
 
 ### ----- 2. Wczytywanie danych ----
-tweets = fread(config::get('path-file')[['tweets-dt']])
-users = fread(config::get('path-file')[['users-clean']])
-
-
+tweets_df = fread(config::get('path-file')[['tweets-dt']])
+users_df = fread(config::get('path-file')[['users-clean']])
 
 
 ### ---------- 3. Czyszczenie tekstu - cleaning the text ------------------
 
-t40 = tweets[1:40, text]
+t40 = tweets_df[1:40, text]
 t40
 
 
 clean = function(t){
   t = gsub("RT @[a-z,A-Z]*: ", "", t)   # usuwa "RT @[name]" (w retweetach)
+  t = gsub("RT ", "", t)
   t = gsub("@[a-z,A-Z, _]*", "", t)    # usuwa "@[name]" 
   t = gsub("#[a-z,A-Z]*", "", t)       # usuwa "#[name]" (hashtags)
   t = gsub("&amp;", "", t)             # usuwa &
@@ -56,7 +46,8 @@ clean = function(t){
   t = gsub("[[:digit:]]", "", t)  # usuwa cyfry (Digits: 0 1 2 3 4 5 6 7 8 9)
   t = gsub("\r\n", " ", t)        # \r\n to nowy wiersz w Windows
   t = gsub("[[:punct:]]", "", t)  # znaki punktuacujne
-  t = gsub("[ ]{2,} ", " ", t)    # kasuje zbędne spacje
+  t = gsub("[ ]{2,}", " ", t)    # kasuje zbędne spacje
+  t = trimws(t)
   t = tolower(t)                  # małe litery (lower case)
   return(t)
 }
@@ -81,14 +72,34 @@ remove_stopwords = function(tweet) {
   paste(tweet_list[sapply(tweet_list, function(x) !(x %in% stopwords))], collapse = " ")
 }
 
-remove_stopwords(clean(t40))
+
+
+remove_stopwords(clean(t40)) #???
+
+
+# przykład
+clean(t40)[5]
+remove_stopwords(clean(t40[5]))
 
 
 
 ### ---- 5. Dopisywanie oczyszczonych tweetów do tabeli (nowa kolumna) ------
 
+tweets = tweets_df[, text]
+clean_tweets = clean(tweets)
+
+#clean_tweets2 =    #????
 
 
+# dodawanie kolumny do tabeli
+tweets_df = tweets_df[ , clean_text := clean_tweets]
+
+
+
+
+### ---- 6. Zapisywanie gotowego pliku jako data/raw/tweets_clean.csv ------
+
+write.table(tweets_df, file="data/raw/tweets_clean.csv")
 
 
 
