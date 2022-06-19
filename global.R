@@ -2,4 +2,4 @@
 library(shiny)
 
 
-words = c("war", "putin", "zelenski", "ukraine", "peace")
+words = c("war", "putin", "zelensky", "ukraine", "peace")
