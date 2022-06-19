@@ -74,7 +74,7 @@ summaryTweets = tableOfAllTweets[, .(lastTweetId = max(tweetId),
 
 
 
-tableOfAllUsers =merge(tableOfAllUsers, summaryTweets, by = "userId")
+tableOfAllUsers = merge(tableOfAllUsers, summaryTweets, by = "userId")
 
 
 
