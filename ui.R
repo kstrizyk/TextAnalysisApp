@@ -48,31 +48,38 @@ ui = navbarPage(
                        min = 5,
                        max = 50
                      ),
-                     checkboxGroupInput("wordcloudUsersChoice",
-                                        label = "Choose user(s)",
-                                        # selected = users[, userId],
-                                        choiceNames = users[, name],
-                                        choiceValues = users[, userId])
+                     checkboxGroupInput(
+                       "wordcloudUsersChoice",
+                       label = "Choose user(s)",
+                       # selected = users[, userId],
+                       choiceNames = users[, name],
+                       choiceValues = users[, userId]
+                     )
                    ),
-                   mainPanel(
-                     wordcloud2Output("wordcloud")
-                   )
+                   mainPanel(wordcloud2Output("wordcloud"))
                  )
                ),
-               tabPanel("WAR-THEMED TWEETS"),
+               tabPanel("WAR-THEMED TWEETS",
+                        sidebarLayout(
+                          sidebarPanel(
+                            checkboxGroupInput(
+                              "tweetPopWordChoice",
+                              label = "Choose words:",
+                              choices = c(words, "all"),
+                              selected = "putin"
+                            )
+                          ),
+                          mainPanel(plotOutput("tweetPopularity"))
+                        )),
                tabPanel(
                  "WORD POPULARITY",
                  titlePanel("Popularity of key words in tweets daily"),
-                 sidebarLayout(
-                   sidebarPanel(
-                     selectInput("wpWordChoice",
-                                 label = "Select Word",
-                                 choices = words)
-                   ),
-                   mainPanel(
-                     plotOutput("wordPopularity")
-                   )
-                 )
+                 sidebarLayout(sidebarPanel(
+                   selectInput("wpWordChoice",
+                               label = "Select Word",
+                               choices = words)
+                 ),
+                 mainPanel(plotOutput("wordPopularity")))
                )
              )
            ))
