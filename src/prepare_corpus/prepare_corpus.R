@@ -41,18 +41,19 @@ clean = function(t){
   t = gsub("\r\n", " ", t)        # \r\n to nowy wiersz w Windows
   t = gsub("[[:punct:]]", "", t)  # znaki punktuacujne
   t = gsub("[ ]{2,}", " ", t)     # kasuje zbędne spacje
+  t = gsub("\\n", " ", t)
+  t = gsub("  ", " ", t)
   t = trimws(t)
   t = tolower(t)                  # małe litery (lower case)
   return(t)
 }
 
-tweets_df[, text := lapply(.SD, clean), .SDcols = "text"]
+tweets_df[, tweetContent := lapply(.SD, clean), .SDcols = "text"]
 
 
 
 ### ----- 4. Usuwamy niepotrzebne słowa języka angielskiego  -----------------
 
-stopwords("en")  # standartowe stop-słowa języka angielskiego
 our_stopwords <- c("also", "just", "according", "can", "may", "must", "will", 
                    "around", "under", "since", "back", "one", "two", "three", "first", "now",
                    "say", "said", "says", "reported", "many",  "new", "day", "pm", "am")
@@ -72,12 +73,12 @@ remove_stopwords = function(tweets) {
 
 ### ---- 5. Dopisywanie oczyszczonych tweetów do tabeli (nowa kolumna) ------
 
-tweets_df[, tweetContent := lapply(.SD, remove_stopwords), .SDcols = "text"]
+tweets_df[, tweetContent := lapply(.SD, remove_stopwords), .SDcols = "tweetContent"]
 
-
+tweets_df[, text := NULL]
 
 ### ---- 6. Zapisywanie gotowego pliku jako data/clean/tweets.csv ------
 
-write.table(tweets_df, file=config::get('path-file')[['clean-tweets']])
+fwrite(tweets_df, file=config::get('path-file')[['clean-tweets']])
 
 
