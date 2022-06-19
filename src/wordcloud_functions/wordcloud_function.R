@@ -28,8 +28,9 @@ wordcloud_function <- function(df, usersID, time_limits, max_words){
 }
 
 
-# PRZYKŁAD dla input
-# usersID = c("19527964")
-# time_limits = c("2022-04-22", "2022-04-30")
-# df = fread(config::get('path-file')[['clean-tweets']])
+# # PRZYKŁAD dla input
+# usersID = c("14106476")
+# time_limits = c("2022-04-30", "2022-04-30")
+# df = fread(config::get('path-file')[['clean-tweets']], integer64 = "character")
 # wordcloud_function(df, usersID, time_limits, max_words=10)
+
