@@ -18,12 +18,11 @@ word_occurrence = function(words, tableOfAllTweets){
   tableOfWords =tableOfWords[, date := as.Date(date)]
   unique(tableOfWords)
 }
-tableOfWords = word_occurrence(words)
 
 
 # function drawing plot
 
-word_popularity_plot = function(word){
+word_popularity_plot = function(word, tableOfWords){
   ggplot(tableOfWords)+geom_point(aes(x=date,y=get(word)))+labs(x="months of 2022", 
                       y="number of tweets containing this word", title = "Plot showing word popularity in tweets daily", 
                       subtitle = paste("selected word:", word))+theme(plot.title = 
