@@ -9,4 +9,9 @@ server = function(input, output, session){
                        input$wordcloudUsersChoice, 
                        input$wordcloudDateRange,
                        input$wordcloudMaxwords)})
+  output$wordPopularity = renderPlot({
+    word_popularity_plot(input$wpWordChoice,
+                         word_popularity_df)
+  })
+  
 }

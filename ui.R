@@ -62,11 +62,17 @@ ui = navbarPage(
                tabPanel("WAR-THEMED TWEETS"),
                tabPanel(
                  "WORD POPULARITY",
-                 titlePanel("Popularity of key words in tweets in time"),
-                 selectInput("one_var",
-                             label = "Select Word",
-                             choices = words),
-                 plotOutput("one_var_plot")
+                 titlePanel("Popularity of key words in tweets daily"),
+                 sidebarLayout(
+                   sidebarPanel(
+                     selectInput("wpWordChoice",
+                                 label = "Select Word",
+                                 choices = words)
+                   ),
+                   mainPanel(
+                     plotOutput("wordPopularity")
+                   )
+                 )
                )
              )
            ))

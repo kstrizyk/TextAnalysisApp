@@ -1,12 +1,6 @@
 library(data.table)
 library(ggplot2)
 
-
-
-# crucial words related to war vector
-words = c("war", "putin", "zelensky", "ukraine", "russia", 
-          "bucha","kharkiv", "mariupol", "war crimes")
-
 # function searching word popularity over time (per date)
 word_occurrence = function(words, tableOfAllTweets){
   tableOfWords = tableOfAllTweets[, .(date)]
@@ -22,20 +16,29 @@ word_occurrence = function(words, tableOfAllTweets){
 
 # function drawing plot
 
-word_popularity_plot = function(word, tableOfWords){
-  ggplot(tableOfWords)+geom_point(aes(x=date,y=get(word)))+labs(x="months of 2022", 
-                      y="number of tweets containing this word", title = "Plot showing word popularity in tweets daily", 
-                      subtitle = paste("selected word:", word))+theme(plot.title = 
-                      element_text(hjust = 0.5), plot.subtitle = 
-                      element_text(hjust = 0.5, color ="navy"),
-                      panel.background = element_rect( fill="white",
-                      colour='black'), panel.grid.major = 
-                      element_line(colour = "black"),)+scale_x_date(date_labels = "%m")
+word_popularity_plot = function(word, tableOfWords) {
+  ggplot(tableOfWords, aes(x = date, y = get(word))) + 
+    # geom_point() +
+    geom_line(color = "navy") +
+    labs(
+    x = "Date",
+    y = "number of tweets containing this word",
+    title = "Plot showing word popularity in tweets daily",
+    subtitle = paste("selected word:", word)
+  ) + theme_bw() +
+    theme(
+    plot.title =
+      element_text(hjust = 0.5),
+    plot.subtitle =
+      element_text(hjust = 0.5, color = "navy"),
+    panel.background = element_rect(fill = "white",
+                                    colour = 'black')
+  ) + scale_x_date(date_labels = "%Y-%m")
 }
 
 
-
-
-
-
+# # Example
+# df = fread("data/clean/tweets.csv", integer64 = "character")
+# df = word_occurrence(words, df)
+# word_popularity_plot(words[1], df)
 
