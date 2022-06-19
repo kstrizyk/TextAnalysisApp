@@ -1,12 +1,12 @@
 ui = navbarPage(
-  "TweetsAnalisys",
+  "TweetsAnalysis",
   selected = "HOME",
   collapsible = TRUE,
   inverse = TRUE,
   tabPanel(
     "HOME",
     HTML(
-      "<h1><center>WELCOME TO <b>TweetsAnalisys</b> WEBPAGE</center></h1>"
+      "<h1><center>WELCOME TO <b>TweetsAnalysis</b> WEBPAGE</center></h1>"
     ),
     column(width = 12,
            br(), br(), br(), br(),
@@ -41,6 +41,13 @@ ui = navbarPage(
                        start = "2022-01-01",
                        end = "2022-04-30"
                      ),
+                     numericInput(
+                       "wordcloudMaxwords",
+                       label = "Choose number of words to display:",
+                       value = 15,
+                       min = 5,
+                       max = 50
+                     ),
                      checkboxGroupInput("wordcloudUsersChoice",
                                         label = "Choose user(s)",
                                         # selected = users[, userId],
@@ -48,7 +55,7 @@ ui = navbarPage(
                                         choiceValues = users[, userId])
                    ),
                    mainPanel(
-                     plotOutput("wordcloud", width = 800)
+                     wordcloud2Output("wordcloud")
                    )
                  )
                ),

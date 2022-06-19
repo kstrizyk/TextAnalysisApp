@@ -4,9 +4,9 @@
 server = function(input, output, session){
   
   
-  output$wordcloud  <- renderPlot({
+  output$wordcloud  <- renderWordcloud2({
     wordcloud_function(tweets, 
                        input$wordcloudUsersChoice, 
                        input$wordcloudDateRange,
-                       10)})
+                       input$wordcloudMaxwords)})
 }

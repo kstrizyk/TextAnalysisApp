@@ -1,6 +1,6 @@
-library(wordcloud)
-library(RColorBrewer)
-
+library(wordcloud2)
+library(tm)
+library(SnowballC)
 
 # input:
 # usersID = c(...)                             # jako wektor character 
@@ -19,18 +19,28 @@ wordcloud_function <- function(df, usersID, time_limits, max_words){
   time_limits = as.Date(time_limits)
   df = df[df$date >= time_limits[1] & df$date <= time_limits[2], ]
   
-  wordcloud_plot = wordcloud(df$tweetContent, 
-                              min.freq = 2,
-                              colors = brewer.pal(7,"Dark2"),
-                              random.color = FALSE, 
-                              random.order = FALSE,
-                              max.words = max_words)
+  corpus = Corpus(VectorSource(df[, tweetContent]))
+  # corpus = tm_map(corpus, stemDocument)
+  
+  word_freq = TermDocumentMatrix(corpus)
+  word_freq = as.matrix(word_freq)
+  freq = sort(rowSums(word_freq), decreasing = TRUE)
+  word_freq = data.table(words = rownames(word_freq), freq = freq)
+
+  wordcloud_plot = wordcloud2(word_freq[1:max_words])
+  wordcloud_plot
+                              # min.freq = 2,
+                              # colors = brewer.pal(7,"Dark2"),
+                              # random.color = FALSE, 
+                              # random.order = FALSE,
+                              # max.words = max_words
+                              
 }
 
 
 # # PRZYKŁAD dla input
-# usersID = c("14106476")
+# usersID = c("19527964")
 # time_limits = c("2022-04-30", "2022-04-30")
 # df = fread(config::get('path-file')[['clean-tweets']], integer64 = "character")
-# wordcloud_function(df, usersID, time_limits, max_words=10)
+# wordcloud_function(df, usersID, time_limits, max_words=30)
 
