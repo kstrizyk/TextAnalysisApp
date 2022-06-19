@@ -6,10 +6,7 @@ library(RColorBrewer)
 # usersID = c(...)                             # jako wektor character 
 # time_limits = c("yyyy-mm-dd", "yyyy-mm-dd")  # jako wektor character ("rok-miesiąc-dzien")
 
-wordcloud_function <- function(usersID, time_limits, max_words){
-  
-  # Wczytywanie danych
-  df = fread(config::get('path-file')[['clean-tweets']])
+wordcloud_function <- function(df, usersID, time_limits, max_words){
   
   df = df[ , c("date", "userId", "tweetContent")]
   df = df[ , date := as.Date(date, format = "%y/%m/%d")]
@@ -32,7 +29,7 @@ wordcloud_function <- function(usersID, time_limits, max_words){
 
 
 # PRZYKŁAD dla input
-# usersID = c("19527964")                         
-# time_limits = c("2022-04-22", "2022-04-30")  
-# 
-# wordcloud_function(usersID, time_limits, max_words=20)
+# usersID = c("19527964")
+# time_limits = c("2022-04-22", "2022-04-30")
+# df = fread(config::get('path-file')[['clean-tweets']])
+# wordcloud_function(df, usersID, time_limits, max_words=10)
