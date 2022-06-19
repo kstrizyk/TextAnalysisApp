@@ -1,11 +1,10 @@
 
-library(shiny)
 
 
 server = function(input, output, session){
   
   
-  output$dateRangeText  <- renderText({
+  output$selected_var  <- renderText({
     paste("input$dateRange is", 
           paste(as.character(input$dateRange), collapse = " to ")
     )
