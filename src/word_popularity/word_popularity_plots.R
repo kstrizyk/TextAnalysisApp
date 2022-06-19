@@ -1,28 +1,25 @@
 library(data.table)
 library(ggplot2)
-library(DT)
-library(dplyr)
-library(forecast)
 
-#reading data from file with cleaned tweets
-path = config::get('path-dir')[['data-clean']]
-tableOfAllTweets = fread(paste(path, "/tweets.csv", sep=""))
 
+
+# crucial words related to war vector
 words = c("war", "putin", "zelensky", "ukraine", "russia", 
           "bucha","kharkiv", "mariupol", "war crimes")
 
 # function searching word popularity over time (per date)
-word_occurrence = function(words){
+word_occurrence = function(words, tableOfAllTweets){
   tableOfWords = tableOfAllTweets[, .(date)]
   tableOfWords[,date:= format(as.POSIXct(date,format='%Y-%m-%d %H:%M:%S'),format='%Y-%m-%d')]
   for (word in words){
     tableOfWords[, (word):=as.integer(grepl(word, tableOfAllTweets$tweetContent))]
     tableOfWords[, (word):=sum(get(word)), by=date]
   }
+  tableOfWords =tableOfWords[, date := as.Date(date)]
   unique(tableOfWords)
 }
 tableOfWords = word_occurrence(words)
-tableOfWords =tableOfWords[, date := as.Date(date)]
+
 
 # function drawing plot
 
