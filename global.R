@@ -16,3 +16,8 @@ words = c("war", "putin", "zelensky", "ukraine", "russia",
           "bucha","kharkiv", "mariupol", "war crimes")
 
 word_popularity_df = word_occurrence(words, tweets)
+
+# prepare tweet popularity functionality
+source("src/tweet_popularity_functions/functions.r")
+
+popularity_averages = prepare_tweets_popularity_df(tweets, words)
