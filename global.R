@@ -6,6 +6,11 @@ tweets = fread(config::get('path-file')[['clean-tweets']],
                integer64 = "character")
 users = fread(config::get('path-file')[['users-clean']], integer64 = "character") 
 
+
+# remove bias
+users = users[as.Date(firstTweetDate) <= as.Date("2022-02-01")]
+tweets = tweets[userId %in% users[, userId]]
+
 # prepare wordcloud funcionality
 source("src/wordcloud_functions/wordcloud_function.R")
 

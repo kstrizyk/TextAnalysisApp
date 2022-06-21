@@ -19,7 +19,7 @@ prepare_tweets_popularity_df = function(df, words) {
     mean(df[df[[word]] == 1, SUM])
     
   })
-  averages['all'] = mean(df[["SUM"]])
+  averages['all words'] = mean(df[["SUM"]])
   round(averages, 0)
 }
 
