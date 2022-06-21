@@ -85,7 +85,7 @@ ui = navbarPage(
                        min = 5,
                        max = 50
                      ),
-                     selectInput(
+                     selectizeInput(
                        "wordcloudUsersChoice",
                        label = "Choose user(s)",
                        choices = choices,
@@ -102,7 +102,7 @@ ui = navbarPage(
                         titlePanel("Reactions to tweets"),
                         sidebarLayout(
                           sidebarPanel(
-                            selectInput(
+                            selectizeInput(
                               "tweetPopWordChoice",
                               label = "Choose words:",
                               choices = c(words, "all words"),

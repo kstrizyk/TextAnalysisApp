@@ -25,7 +25,6 @@ wordcloud_function <- function(df, usersID, time_limits, max_words){
   word_freq = TermDocumentMatrix(corpus)
   word_freq = as.matrix(word_freq)
   freq = sort(rowSums(word_freq), decreasing = TRUE)
-  print(names(freq))
   word_freq = data.table(words = names(freq), freq = freq)
   wordcloud_plot = wordcloud2(word_freq[1:max_words], shuffle = FALSE)
   wordcloud_plot
