@@ -15,7 +15,6 @@ word_occurrence = function(words, tableOfAllTweets){
 
 
 # function drawing plot
-
 word_popularity_plot = function(word, tableOfWords) {
   ggplot(tableOfWords, aes(x = date, y = get(word))) + 
     # geom_point() +
@@ -23,9 +22,9 @@ word_popularity_plot = function(word, tableOfWords) {
     labs(
     x = "date",
     y = "number of tweets containing this word",
-    title = "Plot showing word popularity in tweets daily",
+    title = "Plot",
     subtitle = paste("selected word:", word)
-  ) + theme_bw() +
+  ) +
     theme(
     plot.title =
       element_text(hjust = 0.5, size =30),
@@ -39,8 +38,4 @@ word_popularity_plot = function(word, tableOfWords) {
 }
 
 
-# # Example
-# df = fread("data/clean/tweets.csv", integer64 = "character")
-# df = word_occurrence(words, df)
-# word_popularity_plot(words[1], df)
 

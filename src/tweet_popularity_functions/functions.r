@@ -1,7 +1,7 @@
 library(data.table)
 library(ggplot2)
 
-#interesujące mnie kolumny
+#choosing columns, that matter in this functionality
 prepare_tweets_popularity_df = function(df, words) {
   df <-
     df[, c("retweetCount",
@@ -23,7 +23,7 @@ prepare_tweets_popularity_df = function(df, words) {
   round(averages, 0)
 }
 
-
+#function drawing plot
 tweet_popularity_plot = function(averages_vector, words) {
   averages_vector = averages_vector[words]
   df = data.table(word = names(averages_vector),
@@ -33,7 +33,15 @@ tweet_popularity_plot = function(averages_vector, words) {
              width = 0.6) + coord_flip() +
     scale_x_discrete() + labs(y = "average reaction",
                               x = "word",
-                              title = "average of reactions per tweet") +
-    theme_bw()
+                              title = "Plot",
+                              subtitle = "average number of reactions per tweet") +theme(
+      plot.title =
+        element_text(hjust = 0.5, size =30),
+      plot.subtitle =
+        element_text(hjust = 0.5, color = "navy", size = 20),
+      panel.background = element_rect(fill = "white",
+                                      colour = 'black'),
+      axis.title.y = element_text(size=16),
+      axis.title.x = element_text(size=16))
 }
 

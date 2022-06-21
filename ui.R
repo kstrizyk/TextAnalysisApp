@@ -51,7 +51,7 @@ ui = navbarPage(
                      checkboxGroupInput(
                        "wordcloudUsersChoice",
                        label = "Choose user(s)",
-                       # selected = users[, userId],
+                       selected = users[, userId][1],
                        choiceNames = users[, name],
                        choiceValues = users[, userId]
                      )
@@ -66,7 +66,7 @@ ui = navbarPage(
                               "tweetPopWordChoice",
                               label = "Choose words:",
                               choices = c(words, "all"),
-                              selected = "putin"
+                              selected = words[1]
                             )
                           ),
                           mainPanel(plotOutput("tweetPopularity"))
