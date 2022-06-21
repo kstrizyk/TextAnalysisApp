@@ -85,12 +85,14 @@ ui = navbarPage(
                        min = 5,
                        max = 50
                      ),
-                     checkboxGroupInput(
+                     selectInput(
                        "wordcloudUsersChoice",
                        label = "Choose user(s)",
+                       choices = choices,
                        selected = users[, userId][1],
-                       choiceNames = users[, name],
-                       choiceValues = users[, userId]
+                       multiple = TRUE
+                       # choiceNames = users[, name],
+                       # choiceValues = users[, userId]
                      )
                    ),
                    mainPanel(wordcloud2Output("wordcloud"))
@@ -100,11 +102,12 @@ ui = navbarPage(
                         titlePanel("Reactions to tweets"),
                         sidebarLayout(
                           sidebarPanel(
-                            checkboxGroupInput(
+                            selectInput(
                               "tweetPopWordChoice",
                               label = "Choose words:",
                               choices = c(words, "all words"),
-                              selected = words[1]
+                              selected = words[1],
+                              multiple = TRUE
                             )
                           ),
                           mainPanel(plotOutput("tweetPopularity"))

@@ -13,7 +13,8 @@ tweets = tweets[userId %in% users[, userId]]
 
 # prepare wordcloud funcionality
 source("src/wordcloud_functions/wordcloud_function.R")
-
+choices = users[, userId]
+names(choices) = users[, name]
 
 # prepare word popularity functionality
 source("src/word_popularity/word_popularity_plots.R")
