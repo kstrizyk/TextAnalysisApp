@@ -1,0 +1,24 @@
+default:
+  path-dir:
+    data-clean: data/clean
+    data-twitter: data/from-twitter
+    data-raw: data/raw
+    data-auxiliary: data/auxiliary
+  path-file:
+    users-choice: data/auxiliary/users_choice.csv
+    users: data/raw/users.csv
+    users-clean: data/raw/users_clean.csv
+    tweets-dt: data/raw/tweets.csv
+    clean-tweets: data/clean/tweets.csv
+  twitter-params:
+    user-fields:
+      - description
+      - public_metrics
+      - verified
+      - withheld
+    tweet-fields:
+      - author_id
+      - created_at
+      - public_metrics
+      - withheld
+  

@@ -1,0 +1,19 @@
+# Ignore unnecessary Rproject files
+.Rhistory
+.Rproj.user
+.Renviron
+
+# Ignore private library
+renv/library
+
+# Ignore some scripts
+src/twitter/create_log_dfs.R
+src/twitter/sandbox.R
+
+# Ignore all files with Tweets except for zip
+data/from-twitter/*
+!data/from-twitter/tweets.zip 
+
+# Ignore .RData files
+.RData
+
