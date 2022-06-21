@@ -29,7 +29,7 @@ ui = navbarPage(
            fluidPage(
              tabsetPanel(
                tabPanel(
-                 "WORD CLOUD",
+                 "Wordcloud",
                  titlePanel("Most popular words in tweets"),
                  sidebarLayout(
                    sidebarPanel(
@@ -59,7 +59,8 @@ ui = navbarPage(
                    mainPanel(wordcloud2Output("wordcloud"))
                  )
                ),
-               tabPanel("WAR-THEMED TWEETS",
+               tabPanel("Reaction barplot",
+                        titlePanel("Reactions to tweets"),
                         sidebarLayout(
                           sidebarPanel(
                             checkboxGroupInput(
@@ -72,7 +73,7 @@ ui = navbarPage(
                           mainPanel(plotOutput("tweetPopularity"))
                         )),
                tabPanel(
-                 "WORD POPULARITY",
+                 "Occurence timeseries",
                  titlePanel("Popularity of key words in tweets daily"),
                  sidebarLayout(sidebarPanel(
                    selectInput("wpWordChoice",

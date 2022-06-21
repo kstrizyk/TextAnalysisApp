@@ -25,16 +25,10 @@ wordcloud_function <- function(df, usersID, time_limits, max_words){
   word_freq = TermDocumentMatrix(corpus)
   word_freq = as.matrix(word_freq)
   freq = sort(rowSums(word_freq), decreasing = TRUE)
-  word_freq = data.table(words = rownames(word_freq), freq = freq)
-
-  wordcloud_plot = wordcloud2(word_freq[1:max_words])
+  print(names(freq))
+  word_freq = data.table(words = names(freq), freq = freq)
+  wordcloud_plot = wordcloud2(word_freq[1:max_words], shuffle = FALSE)
   wordcloud_plot
-                              # min.freq = 2,
-                              # colors = brewer.pal(7,"Dark2"),
-                              # random.color = FALSE, 
-                              # random.order = FALSE,
-                              # max.words = max_words
-                              
 }
 
 

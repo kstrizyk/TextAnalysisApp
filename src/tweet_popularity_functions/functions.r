@@ -28,20 +28,34 @@ tweet_popularity_plot = function(averages_vector, words) {
   averages_vector = averages_vector[words]
   df = data.table(word = names(averages_vector),
                   average_reaction = averages_vector)
-  ggplot(data = df, aes(x = word, y = average_reaction, color = word, fill = word)) +
+  ggplot(data = df,
+         aes(
+           x = word,
+           y = average_reaction,
+           color = word,
+           fill = word
+         )) +
     geom_bar(stat = "identity",
              width = 0.6) + coord_flip() +
-    scale_x_discrete() + labs(y = "average reaction",
-                              x = "word",
-                              title = "Plot",
-                              subtitle = "average number of reactions per tweet") +theme(
+    scale_x_discrete() + labs(y = "Average reaction",
+                              x = "Words",
+                              title = "Average reaction to Tweets with given word") +
+    theme_bw() +
+    theme(
       plot.title =
-        element_text(hjust = 0.5, size =30),
+        element_text(hjust = 0.5, size = 26),
       plot.subtitle =
-        element_text(hjust = 0.5, color = "navy", size = 20),
-      panel.background = element_rect(fill = "white",
-                                      colour = 'black'),
-      axis.title.y = element_text(size=16),
-      axis.title.x = element_text(size=16))
+        element_text(
+          hjust = 0.5,
+          color = "navy",
+          size = 20
+        ),
+      # panel.background = element_rect(fill = "white",
+      #                                 colour = 'black'),
+      axis.title.y = element_text(size = 20),
+      axis.title.x = element_text(size = 20),
+      axis.text.y = element_text(size = 20),
+      axis.text.x = element_text(size = 16),
+      legend.position = "none"
+    )
 }
-

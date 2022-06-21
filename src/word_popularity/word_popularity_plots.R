@@ -20,20 +20,22 @@ word_popularity_plot = function(word, tableOfWords) {
     # geom_point() +
     geom_line(color = "navy") +
     labs(
-    x = "date",
-    y = "number of tweets containing this word",
-    title = "Plot",
-    subtitle = paste("selected word:", word)
-  ) +
+    x = "Date",
+    y = "Number of tweets",
+    title = "Daily number of tweets with selected word",
+    subtitle = paste("Selected word:", word)
+  ) + theme_bw() +
     theme(
     plot.title =
-      element_text(hjust = 0.5, size =30),
+      element_text(hjust = 0.5, size = 26),
     plot.subtitle =
-      element_text(hjust = 0.5, color = "navy", size = 20),
-    panel.background = element_rect(fill = "white",
-                                    colour = 'black'),
-    axis.title.y = element_text(size=16),
-    axis.title.x = element_text(size=16)
+      element_text(hjust = 0.5, size = 20),
+    # panel.background = element_rect(fill = "white",
+    #                                 colour = 'black'),
+    axis.title.y = element_text(size=20),
+    axis.title.x = element_text(size=20),
+    axis.text.y = element_text(size = 16),
+    axis.text.x = element_text(size = 16)
   ) + scale_x_date(date_labels = "%Y-%m")
 }
 

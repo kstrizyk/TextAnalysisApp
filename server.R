@@ -1,6 +1,3 @@
-
-
-
 server = function(input, output, session){
   
   output$tweetPopularity = renderPlot({
