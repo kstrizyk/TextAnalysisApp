@@ -9,7 +9,7 @@ on programming in R (PiADwR, M. Staniak, 2022 r.).
 To set an application environment:
 
 - open `TextAnalysisApp.Rproj` in RStudio,
-- run `r renv::restore()` command,
+- run `renv::restore()` command in console,
 - agree for installing all project dependencies.
 
 ## Run
@@ -17,4 +17,4 @@ To set an application environment:
 To run an application:
 
 - open `TextAnalysisApp.Rproj` in RStudio,
-- start an application using `r runApp()` command or by clicking the button.
+- start an application using `runApp()` command in console or by clicking the button.
